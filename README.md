@@ -1,2 +1,2 @@
 # TICKCodeManager
-A code manager for mac os x
+A code manager for Mac OS X
