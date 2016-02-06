@@ -21,6 +21,7 @@
 		E2E77B331C65D19B004B9740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2E77B361C65D19B004B9740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E2E77B381C65D19B004B9740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2E77B3F1C65DEEF004B9740 /* TICKDebugLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TICKDebugLog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 		E2E77B2C1C65D19B004B9740 /* TICKCodeManager */ = {
 			isa = PBXGroup;
 			children = (
+				E2E77B3E1C65DEBF004B9740 /* Const */,
 				E2E77B2D1C65D19B004B9740 /* AppDelegate.h */,
 				E2E77B2E1C65D19B004B9740 /* AppDelegate.m */,
 				E2E77B331C65D19B004B9740 /* Assets.xcassets */,
@@ -69,6 +71,14 @@
 				E2E77B311C65D19B004B9740 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2E77B3E1C65DEBF004B9740 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				E2E77B3F1C65DEEF004B9740 /* TICKDebugLog.h */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +291,7 @@
 				E2E77B3D1C65D19B004B9740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
