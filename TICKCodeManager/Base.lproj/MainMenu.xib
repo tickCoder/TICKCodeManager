@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -12,6 +12,11 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Tyb-2D-wTp" customClass="RandomController">
+            <connections>
+                <outlet property="_textField" destination="wrO-hL-g8i" id="Chs-rb-CxE"/>
+            </connections>
+        </customObject>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -31,7 +36,11 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                            <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                <connections>
+                                    <action selector="preferenceBtnAction:" target="Voe-Tx-rLC" id="edK-EC-Slg"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                             <menuItem title="Services" id="NMo-om-nkz">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -675,7 +684,49 @@
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="66L-9h-t6i">
+                        <rect key="frame" x="14" y="312" width="452" height="32"/>
+                        <buttonCell key="cell" type="push" title="seed" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8zZ-9F-zc1">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="seed:" target="Tyb-2D-wTp" id="EP4-va-BlH"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="has-G4-0d1">
+                        <rect key="frame" x="14" y="258" width="452" height="32"/>
+                        <buttonCell key="cell" type="push" title="generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kwf-dr-Iv2">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="generate:" target="Tyb-2D-wTp" id="q1o-XI-MpC"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wrO-hL-g8i">
+                        <rect key="frame" x="20" y="218" width="440" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="---" drawsBackground="YES" id="phr-Xg-8dU">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" red="0.77363729043723239" green="1" blue="0.59495498472460095" alpha="1" colorSpace="calibratedRGB"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="66L-9h-t6i" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="42n-ha-NkA"/>
+                    <constraint firstItem="has-G4-0d1" firstAttribute="leading" secondItem="66L-9h-t6i" secondAttribute="leading" id="OpY-TB-vI5"/>
+                    <constraint firstItem="66L-9h-t6i" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="WfJ-De-UuE"/>
+                    <constraint firstItem="66L-9h-t6i" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="ehF-hj-bKW"/>
+                    <constraint firstItem="has-G4-0d1" firstAttribute="top" secondItem="66L-9h-t6i" secondAttribute="bottom" constant="33" id="gGJ-8Z-BbY"/>
+                    <constraint firstItem="has-G4-0d1" firstAttribute="trailing" secondItem="66L-9h-t6i" secondAttribute="trailing" id="jQ6-Ey-3n9"/>
+                    <constraint firstItem="wrO-hL-g8i" firstAttribute="trailing" secondItem="has-G4-0d1" secondAttribute="trailing" id="l8i-HP-iva"/>
+                    <constraint firstItem="wrO-hL-g8i" firstAttribute="top" secondItem="has-G4-0d1" secondAttribute="bottom" constant="30" id="oUP-sl-pZg"/>
+                    <constraint firstItem="wrO-hL-g8i" firstAttribute="leading" secondItem="has-G4-0d1" secondAttribute="leading" id="vFZ-YS-klG"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="210" y="336"/>
         </window>
     </objects>
 </document>
