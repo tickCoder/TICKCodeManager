@@ -23,4 +23,9 @@
     // Insert code here to tear down your application
 }
 
+#pragma mark <NSTableViewDataSource & NSTableViewDelegate>
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return 29;
+}
+
 @end

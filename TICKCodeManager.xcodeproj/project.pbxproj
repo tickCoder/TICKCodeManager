@@ -281,6 +281,7 @@
 				E2E77B3D1C65D19B004B9740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
