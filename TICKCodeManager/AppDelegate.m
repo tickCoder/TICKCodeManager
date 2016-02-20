@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PreferenceViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,11 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+}
+
+#pragma mark - Response
+- (IBAction)preferenceBtnAction:(id)sender {
+    
 }
 
 #pragma mark <NSTableViewDataSource & NSTableViewDelegate>
